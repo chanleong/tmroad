@@ -2,7 +2,14 @@
 
 class preprocessor:
 	@staticmethod
+	def fetch(file):
+		import os
+		cmd = "wget -O " + file + " http://resource.data.one.gov.hk/td/journeytime.xml"
+		os.system(cmd)
+
+	@staticmethod
 	def do(file):
+		preprocessor.fetch(file)
 		import re
 		f = open(file, "r")
 		b = "" 
